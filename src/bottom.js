@@ -16,7 +16,8 @@ class Bottom extends React.Component {
       }
     multiButton=(num)=>{
         var output=[];
-        output.push(<button onClick={this.changeText}>按鍵</button>)
+        for(let i=1;i<num+1;++i)
+            output.push(<button onClick={this.changeText}>第{i}個按鍵</button>)
         return output;
       }
     render() { 
