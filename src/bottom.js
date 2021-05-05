@@ -9,25 +9,21 @@ class Bottom extends React.Component {
         this.setState({counter:this.state.counter+1});
         console.log(this.state);
     }
-    changeText=(event)=>{
-        console.log(event.target)
-        event.target.innerText=event.target.innerText+"被點了"
-        this.handleClick();
-      }
+    // changeText=(event)=>{
+    //     console.log(event.target)
+    //     event.target.innerText=event.target.innerText+"被點了"
+    //     this.handleClick();
+    //   }
     multiButton=(num)=>{
+        var text=this.state.counter;
         var output=[];
-        for(let i=1;i<num+1;++i)
-            output.push(<button onClick={this.changeText}>第{i}個按鍵</button>)
+            output.push(<button onClick={this.handleClick}>按鍵 你點了{text}次</button>)
         return output;
       }
-    render() { 
-        var text=this.state.counter;    
+    render() {     
         return (       
         <div> 
-            {this.multiButton(10)};                
-            <p>
-                你點了{text}次.
-            </p>       
+            {this.multiButton(10)};                      
         </div>     
         );   
     }    
